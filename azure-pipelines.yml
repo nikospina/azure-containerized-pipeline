@@ -9,7 +9,7 @@ resources:
       image: maven:latest
       
     - container: sonar-scanner
-      image: darkaru/sonarqube-curl
+      image: darkaru/sonarqube-curl:v1
 
 
 trigger:
