@@ -6,7 +6,7 @@
 resources:
   containers:
     - container: maven
-      image: maven:3.6-amazoncorretto-8
+      image: maven:latest
 
 trigger:
 - main
