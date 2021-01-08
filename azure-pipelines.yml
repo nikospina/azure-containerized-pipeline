@@ -8,8 +8,8 @@ resources:
     - container: maven
       image: maven:latest
       
-    - container: sonar-scanner
-      image: darkaru/sonarqube-curl:v1
+    - container: Trivy
+      image: darkaru/trivy::v1
 
 
 trigger:
@@ -24,7 +24,7 @@ jobs:
     steps:
       - script: mvn -v
 
-  - job: sonarScanner
-    container: sonar-scanner
+  - job: TrivyScan
+    container: trivy
     steps:
-      - script: sonar-scanner -v
+      - script: trivy -v
