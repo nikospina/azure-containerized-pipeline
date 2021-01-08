@@ -22,9 +22,9 @@ jobs:
   - job: Build
     container: maven
     steps:
-      - script: mvn -v && java -v
+      - script: mvn -v && java version
 
   - job: Build2
     container: maven3-jdk8
     steps:
-      - script: mvn -v && java -v
+      - script: mvn -v && java version
