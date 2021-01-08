@@ -7,6 +7,10 @@ resources:
   containers:
     - container: maven
       image: maven:latest
+      
+    - container: sonar-scanner
+      image: sonarsource/sonar-scanner-cli
+
 
 trigger:
 - main
@@ -19,3 +23,8 @@ jobs:
     container: maven
     steps:
       - script: mvn -v
+
+  - job: sonarScanner
+    container: sonar-scanner
+    steps:
+      - script: sonar-scanner -v
