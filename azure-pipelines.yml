@@ -8,8 +8,8 @@ resources:
     - container: maven
       image: maven:latest
       
-    - container: Trivy
-      image: darkaru/trivy:v1
+    - container: maven3-jdk8
+      image: maven:3-jdk-8
 
 
 trigger:
@@ -22,9 +22,9 @@ jobs:
   - job: Build
     container: maven
     steps:
-      - script: mvn -v
+      - script: mvn -v && java -v
 
-  - job: TrivyScan
-    container: trivy
+  - job: Build2
+    container: maven3-jdk8
     steps:
-      - script: trivy -v
+      - script: mvn -v && java -v
