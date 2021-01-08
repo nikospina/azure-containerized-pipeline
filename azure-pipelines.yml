@@ -9,7 +9,7 @@ resources:
       image: maven:latest
       
     - container: Trivy
-      image: darkaru/trivy::v1
+      image: darkaru/trivy:v1
 
 
 trigger:
